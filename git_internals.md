@@ -20,7 +20,20 @@ Plumbing commands are the interesting ones. They need to manage (mainly):
 
 ## Objects
 
-There are several types of objects and all are stored under their hash in `.git/objects/<first two chars from hash>/<rest of the hash>`.
+There are several types of objects and all are stored under their hash in
+`.git/objects/<first two chars from hash>/<rest of the hash>`.
+
+You can examine objects by using git plumbing command `cat-file`:
+
+```bash
+$ git cat-file -p a906cb2a4a904a152e80877d4088654daad0c859
+
+# This is a readme
+
+...
+```
+
+The `-p` stands on pretty print based on the type of object.
 
 ### Blobs and tree objects
 
@@ -99,5 +112,5 @@ to save up space.
 `git gc` command is run automatically when pushing to a server so you don't have
 to run it manually.
 
-Source: [Pro Git][s/progit].
+Source: Chapter "Git Internals" of [Pro Git][s/progit].
 
