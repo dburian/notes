@@ -56,6 +56,9 @@ Example:
 So to store a directory 'A' with subdirectory 'B' you'd have to store 'B' as
 a tree and then store that tree as a record of the 'A' tree.
 
+You can view tree stored for given commit (more on commit objects later...) by
+doing `git ls-tree <commit>`.
+
 Tree objects always contain the whole snapshot of the stored content. If the
 content hasn't changed from the previous commit, the tree object stores the old
 hash. Which brings us to...
