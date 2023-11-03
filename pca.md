@@ -4,7 +4,8 @@ Dimensionality reduction technique that projects a set of points in a
 $d$-dimensional space to $k$-dimensional such that the coordintes of the target
 space explain as much variance of the given points as possible.
 
-## Technique (using Covariance matrix)
+## Computations
+### Using Covariance matrix
 
 Given a set of points $X \in \mathbb{R}^{n \times d}$ we are looking for linear
 projection $w_1 \in \mathbb{R}^d$ such that the variance $Var(X_{i\star}w_1)$
@@ -30,14 +31,14 @@ We contrain $w_1$ to have unit length and use Lagrange multiplier method (TODO),
 which gives us:
 
 $$
-\Sigma w_1 = \alpha w_1
+\Sigma w_1 = \lambda w_1
 $$
 
 Therefore $w_1$ must be an eigenvector of covariance matrix $\Sigma$. If we want
-maximize $w_1^T\Sigma w_1 = \alpha w_1^T w_1$ we must choose the eigenvector
+maximize $w_1^T\Sigma w_1 = \lambda w_1^T w_1$ we must choose the eigenvector
 with the largest eigenvalue.
 
-### Construction
+#### Construction
 
 We iteratively apply the steps described above with the additional constraint
 that new $w_i$ must be orthogonal to $w_j$ for all $j<i$. We get eigenvectors of
@@ -54,3 +55,14 @@ Note that PCA can be done using other techniques such as Singular Value
 Decomposition (SVD) TODO.
 
 TODO: explained variance
+
+## Choosing the number of principal components
+
+We usually stop when Proportion of Variance (PoV) explained:
+
+$$
+\frac{\lambda_1 + \lambda_2 + \ldots + \lambda_k}{\lambda_1 + \lambda_2 + \ldots
++ \lambda_k + \ldots + \lambda_d}
+$$
+
+is above 0.9.
