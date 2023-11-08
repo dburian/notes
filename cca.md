@@ -1,7 +1,11 @@
+[matrix_norms]: matrix_norms.md
 # Canonical Correlation Analysis (CCA)
 
 CCA is a statistical method to find linear projections of two sets of variables
-$X$ and $Y$ such that these projections are maximally correlated. In formulas:
+$X$ and $Y$ such that these projections are maximally correlated. 
+
+
+## Definition
 
 - for observations $X \in \mathbb{R}^{n_1 \times m_1}$, $Y \in \mathbb{R}^{n_2
   \times m_2}$,
@@ -26,8 +30,10 @@ $$
 \end{align}
 $$
 
+### More projections
+
 When more projections are needed we require that the projections should be
-uncorrelated.
+uncorrelated:
 
 $$
 \begin{align}
@@ -35,6 +41,34 @@ $$
     corr(Yq_1, Yq_2) &= q_1^T \Sigma_Y q_2 = 0
 \end{align}
 $$
+
+We can put the projections into matricies $P = [p_1, p_2, ...]$ and $Q = [q_1,
+q_2, ...]$. Then we maximize the sum of all canonical correlations:
+
+$$
+\sum_i \delta_i = max_{P, Q} trace(P^TX^TYQ) \\
+$$
+
+such that $ P^TX^TXP = I$ and $Q^TY^TYQ = I$.
+
+We can also reformulate the above in terms of minimzalization of a [Forbenius
+norm][matrix_norms]:
+
+$$
+\begin{align}
+    \sum_i \delta_i &= min_{P, Q} ||XP - YQ||_F^2 \\
+                    &= min_{P, Q} trace((XP - YQ)^T(XP - YQ)) \\
+                    &= min_{P, Q} trace(P^TX^TXP - P^TX^TYQ -Q^TY^TXP + Q^TY^TYQ) \\
+                    &= min_{P, Q} trace(- P^TX^TYQ - Q^TY^TXP) \\
+                    &= min_{P, Q} -2 trace(P^TX^TYQ) \\
+                    &= max_{P, Q} trace(P^TX^TYQ) \\
+\end{align}
+$$
+
+
+
+
+
 
 We can arrange these vectors $p_i$ and $q_i$ as columns into matricies $P$ and
 $Q$ respectively.
@@ -148,7 +182,7 @@ projections $p_i$ and $q_i$.
 
 ### Eigendecomposition
 
-By substituting $P$ for $\tilde{P} = \Sigma_X^{-\frac{1}{2}}$ we can get an
+By substituting $P$ for $\tilde{P} = \Sigma_X^{-\frac{1}{2}}P$ we can get an
 eigendecomposition:
 
 $$
