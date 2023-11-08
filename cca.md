@@ -10,9 +10,9 @@ $X$ and $Y$ such that these projections are maximally correlated. In formulas:
 
 $$
 \begin{align}
- \delta &= argmax_{p, q} corr(Xp, Yq) \\
-        &= argmax_{p, q} \frac{(Xp)^T Yq}{|Xp| |Yq|} \\
-        &= argmax_{p, q} \frac{p^T \Sigma q}{\sqrt{(Xp)^T \cdot Xp} \sqrt{(Yq)^T \cdot Yq}}
+ \delta &= max_{p, q} corr(Xp, Yq) \\
+        &= max_{p, q} \frac{(Xp)^T Yq}{|Xp| |Yq|} \\
+        &= max_{p, q} \frac{p^T \Sigma q}{\sqrt{(Xp)^T \cdot Xp} \sqrt{(Yq)^T \cdot Yq}}
 \end{align}
 $$
 
