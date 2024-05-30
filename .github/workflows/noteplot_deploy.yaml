@@ -31,7 +31,7 @@ jobs:
       - name: Clone noteplot
         uses: actions/checkout@v4
         with:
-          repo: dburian/noteplot
+          repository: dburian/noteplot
           ref: main
           path: np_dir
       - run: cd np_dir
