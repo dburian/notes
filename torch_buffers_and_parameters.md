@@ -25,6 +25,12 @@ running mean.
 self.register_buffer("running_mean", torch.zeros(dim))
 ```
 
+Also helfpuf is:
+
+```python
+torch.cuda.memory_summary()
+```
+
 ## Both
 
 - are saved

@@ -2,8 +2,7 @@
 # Canonical Correlation Analysis (CCA)
 
 CCA is a statistical method to find linear projections of two sets of variables
-$X$ and $Y$ such that these projections are maximally correlated. 
-
+$X$ and $Y$ such that these projections are maximally correlated.
 
 ## Definition
 
@@ -66,10 +65,6 @@ $$
 $$
 
 
-
-
-
-
 We can arrange these vectors $p_i$ and $q_i$ as columns into matricies $P$ and
 $Q$ respectively.
 
@@ -77,7 +72,7 @@ $Q$ respectively.
 
 ### Sources and references
 
-The following is mainly from an exerpt from [Encyclopedia of Social Network
+The following is mainly from an exert from [Encyclopedia of Social Network
 Analysis and
 Mining](https://link.springer.com/referenceworkentry/10.1007/978-1-4939-7131-2_110191).
 Though it is not available to public for free, I've found this to be best source
@@ -102,8 +97,8 @@ L(\alpha, \beta, p, q) = p^T \Sigma q
     - \frac{\beta}{2} (q^T\Sigma_Y q -1)
 $$
 
-Derivating the above with respect to $p$ and $q$, and setting the result equal
-to 0 we get:
+Computing the derivation of the above with respect to $p$ and $q$, and setting
+the result equal to 0 we get:
 
 $$
 \begin{aligned}
@@ -129,7 +124,7 @@ p^T \Sigma q = (p^T \Sigma q)^T = q^T \Sigma p
 $$
 
 and hence $\alpha = \beta$. According to definition of $\delta$ and due to how
-Lagragian optimization works we can also say that $\alpha = \beta = \delta$.
+Lagrangian optimization works we can also say that $\alpha = \beta = \delta$.
 
 ### Formulating the optimization as eigenvalue problem
 
@@ -194,10 +189,10 @@ $$
 $$
 
 From the above we can see that $\tilde{P}$ stores eigenvectors with eigenvalues
-$\Delta^2$ for the symetric matrix: $\Sigma_X^{\frac{1}{2}} \Sigma_X^{-1} \Sigma
-\Sigma_Y^{-1} \Sigma^T \Sigma_X^{-\frac{1}{2}} \tilde{P}$. Since the matrix is
-symmetric, the eigenvectors are orthogonal and therfore we get an eigenvalue
-decomposition:
+$\Delta^2$ for the symmetric matrix: $\Sigma_X^{\frac{1}{2}} \Sigma_X^{-1}
+\Sigma \Sigma_Y^{-1} \Sigma^T \Sigma_X^{-\frac{1}{2}} \tilde{P}$. Since the
+matrix is symmetric, the eigenvectors are orthogonal and therefore we get an
+eigenvalue decomposition:
 
 
 $$

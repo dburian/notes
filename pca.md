@@ -13,7 +13,8 @@ for $i \in \{1\dots n\}$ is maximized. Let's treat $x \in \mathbb{R}^d$ as
 random vector sampled from the distribution of input points (one of the rows of
 $X$).
 
-$$\begin{align}
+$$
+\begin{align}
 Var(x^Tw_1) &= E[(x^Tw_1 - E[x^Tw_1])^2]\\
 &= E[(x^Tw_1 - \mu^Tw_1)^2]\\
 &= E[(x^Tw_1 - \mu^Tw_1)(x^Tw_1 - \mu^Tw_1)]\\
@@ -22,7 +23,8 @@ Var(x^Tw_1) &= E[(x^Tw_1 - E[x^Tw_1])^2]\\
 &= E[w_1^T(x - \mu)(x - \mu)^Tw_1]\\
 &= w_1^TE[(x - \mu)(x - \mu)^T]w_1\\
 &= w_1^T\Sigma w_1
-\end{align}$$
+\end{align}
+$$
 
 where $\Sigma$ is covariance matrix of $x$: $\Sigma = cov(x, x) = E[(x − \mu)(x −
 \mu)^T]$.
