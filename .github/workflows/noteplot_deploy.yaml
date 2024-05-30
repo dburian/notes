@@ -34,11 +34,6 @@ jobs:
           repository: dburian/noteplot
           ref: main
           path: np_dir
-      - run: pwd
-      - run: cd np_dir
-      - run: pwd
-      - run: echo ${GITHUB_WORKSPACE}
-      - run: ls ${GITHUB_WORKSPACE}/np_dir
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
