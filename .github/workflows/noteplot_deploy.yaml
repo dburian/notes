@@ -28,30 +28,30 @@ jobs:
         uses: actions/checkout@v4
         with:
             path: notes
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
       - name: Clone noteplot
         uses: actions/checkout@v4
         with:
           repo: dburian/noteplot
           ref: main
           path: np_dir
+      - run: cd np_dir
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
       - name: Install dependencies
-        run: cd np_dir && npm install
+        run: npm install
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
-          cd np_dir
           npx noteplot build ../notes
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'np_dir/build/'
+          path: 'build/'
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
