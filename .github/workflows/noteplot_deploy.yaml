@@ -44,19 +44,22 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: ${GITHUB_WORKSPACE}/np_dir/package-lock.json
+          cache-dependency-path: **/package-lock.json
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd np_dir
+          npm install
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
+          cd np_dir
           npx noteplot build ../notes
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: 'np_dir/build/'
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
