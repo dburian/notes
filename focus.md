@@ -14,6 +14,7 @@ achieve or gain. *We already have it.* We just have to let go of distracting
 thoughts, of thoughts we wouldn't like to focus on.
 
 In other words when focusing you should not:
+
 - narrow your view
 - try hard or invest a great amount of energy.
 
