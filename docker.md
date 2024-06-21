@@ -92,7 +92,7 @@ Docker compose allows to describe multiple images in one file in YAML format
 ```yaml
 version: "3"                # Version of docker
 services:                   # Containers to spin up
-    my_node:                # Name of a container
+    my_node:                # Name of an image
         image: node:latest
         port: "8888:80"     # Port forwarding
     proxy:
@@ -102,15 +102,22 @@ networks:                   # Network to setup between the containers and the ho
     ...
 ```
 
-The command for operating with docker compose is `docker-compose`.
+The command for operating with docker compose is `docker-compose` or `docker
+compose`.
+
+To compile images described in docker-compose yaml files use:
+
+```bash
+docker-compose build [image_name]
+```
 
 To create (or update) containers defined by local `docker-compose.yaml` run:
 ```bash
-docker-compose up
+docker-compose up [image_name]
 ```
 
 To stop the stop the set of containers defined by local `docker-compose.yaml`
 run:
 ```bash
-docker-compose down
+docker-compose down [image_name]
 ```
