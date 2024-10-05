@@ -23,7 +23,7 @@ thanks to which we can evaluate DFT in $O(n\log n)$ time using algorithm called
 Since DFT is a linear projection:
 $$
 \mathcal{F}(\mathbf{x}) = \mathbf{\Omega} \mathbf{x}, \;\text{s.t.}\;
-\mathbf{\Omega}_jk = \omega^{jk}
+\mathbf{\Omega}_{jk} = \omega^{jk}
 $$
 
 

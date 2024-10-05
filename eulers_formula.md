@@ -7,10 +7,33 @@ $$
 e^{ix} = \cos{x} + i\sin{x}
 $$
 
-## Proof (as it was discoveteal)
+## Consequences
+
+Through Euler's formula we can define cosine or sine only by complex
+exponential.
+
+**Cosine:**
+$$
+\begin{aligned}
+e^{ix} + e^{-ix} &= \cos{x} + i\sin{x} + \cos{x} - i\sin{x} = 2\cos{x} \\
+\cos{x} &= \frac{e^{ix} + e^{-ix}}{2}
+\end{aligned}
+$$
+
+**Sine:**
+$$
+\begin{aligned}
+e^{ix} - e^{-ix} &= \cos{x} + i\sin{x} - \cos{x} + i\sin{x} = 2i\sin{x} \\
+\sin{x} &= \frac{e^{ix} - e^{-ix}}{2i}
+\end{aligned}
+$$
+
+## Proofs
+
+### Through Taylor series (original proof)
 
 Even though there are other proofs, let's go over the 'original' one through
-which the relationship was descoveteal.
+which the relationship was discovered.
 
 The formula comes from the [Taylor series](./taylor_series.md). If we compare the
 series for $\cos$, $\sin$ and $e$ we get:
