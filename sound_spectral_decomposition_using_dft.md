@@ -1,8 +1,10 @@
-# Spectral analysis of sound signal
+# Sound spectral decomposition using DFT
 
-Spectral analysis of sound signal describes how to split up any sound signal to
+Spectral decomposition of sound signal describes how to split up any sound signal to
 pure frequencies the sound is made up of. This is done using [Discrete Fourier
-transform (DFT)](./discrete_fourier_transform.md).
+transform (DFT)](./discrete_fourier_transform.md). The result of spectral
+decomposition is a [spectogram](./spectogram.md).
+
 
 
 ## Why DFT can do that
@@ -18,10 +20,6 @@ measuring similarity between two periodic signals: one that we are given and one
 we create. We try several frequencies of our own signal, and see which yield
 non-zero similarity. Due to the nature of periodic functions, similarities of
 functions with non-matching frequencies cancel-out.
-
-## Spectral analysis in practice
-
-TODO
 
 ## Proof
 
@@ -87,7 +85,7 @@ $$
 $$
 
 This means that only some Fourier coefficients will be non-zero. Specifically
-those that used primitive roots of 1 that correspond to the same period as
+those that used primitive roots of 1 that *correspond to the same period* as
 $s^k$. Here is an interpretation of what we did, which might explain the
 previous sentence:
 - we sampled our function $\s^k$ at $n$ points, equally spaced during one
@@ -108,16 +106,17 @@ $$
 \begin{align}
 \s^{n/2 + l}_t &= \sin\left(2{\pi}  \left(\frac{n}{2} + l\right) \frac{t}{n} \right) \\
 &= \sin\left(t\pi + l2\pi \frac{t}{n}\right) \\
-&= \pm \sin\left(\frac{2lt}{n}\right)
+&= \pm \sin\left(\frac{2l{\pi}t}{n}\right)
 \end{align}
 $$
 
-As a consequence, we can only register pure sounds that oscilate at least 2
-times within the $n$ sampled points.
+So by running $n$ samples though DFT, we get information about $n$ frequencies,
+but only half of them are unique. The second half of frequencies, mirrors the
+first one.
 
 #### Cosine
 
-We could do the same for $\cos$ and $\c^k$. We'd get:
+We could do all of the above for $\cos$ and $\c^k$ as well. We'd get:
 - for $j = k$: $\mathcal{F}(\c^k)_k = -1/2$
 - for $j = n - k$: $\mathcal{F}(\c^k)_{n-k} = 1/2$
 - otherwise: $\mathcal{F}(\c^k)_j = 0$

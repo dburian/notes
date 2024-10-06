@@ -111,6 +111,19 @@ where
 
 ## Common approaches
 
+The common approach is to
+1. visualize the signal
+2. apply CNN to windows of the visualization and
+3. contextualize CNN representations of the windows either by RNN or Transformer
+
+### Visualization of signal
+
+Traditionally signal was visualized using [Mel-Frequency Cepstral Coefficients
+(MFCCs)](./cepstogram.md), which filters out sound's details and leaves only the
+main identification points. However, its a heavy feature processing which leaves
+out detail, that more powerful architectures could use. And so, recently, there
+are models that use pure sound wave such as [Wav2vec](./wav2vec.md) or
+[HuBERT](./hubert.md).
 
 ## Good sources of info
 
