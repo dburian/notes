@@ -1,3 +1,6 @@
+---
+tags: [ml,transformers]
+---
 # Transformer's sparse self-attention
 
 Sparse attentions are [self-attentions](./transformer_self_attention.md) that

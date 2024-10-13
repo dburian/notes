@@ -1,3 +1,6 @@
+---
+tags: [ml]
+---
 # Proximal policy optimization
 
 Proximal policy optimization (PPO for short) is a reinforcement technique. Used

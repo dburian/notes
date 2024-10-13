@@ -1,3 +1,6 @@
+---
+tags: [math]
+---
 [field]: field.md
 
 # Matrix norms

@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml]
+---
 # LayoutXLM
 
 Multi-modal multi-lingual model able to process and understand visual structured

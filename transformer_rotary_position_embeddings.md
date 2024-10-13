@@ -1,3 +1,6 @@
+---
+tags: [transformers, ml]
+---
 # Rotary position embeddings in Transformer architectures
 
 Different way of encoding position information in [transformer's

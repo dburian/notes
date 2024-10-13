@@ -1,3 +1,6 @@
+---
+tags: [recipes]
+---
 # Margherita pizza
 
 Simplest pizza recipe there is done in a cast-iron pan in an oven.

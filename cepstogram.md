@@ -1,3 +1,7 @@
+---
+tags: [ml, speech_to_text]
+---
+
 # Cepstogram
 
 Cepstograms are visualizations of a signal in sound processing. Due to being

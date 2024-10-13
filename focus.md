@@ -1,3 +1,7 @@
+---
+tags: [meditation,self_help]
+---
+
 [s/headspace-focus]: sources/headspace-focus.md
 
 # Focus

@@ -1,3 +1,6 @@
+---
+tags: [self_improvement]
+---
 # Project outcomes
 
 When well-defined, project outcomes are everything. They are the reason we are

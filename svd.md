@@ -1,3 +1,6 @@
+---
+tags: [statistics,math]
+---
 [cca]: cca.md
 
 # Singular Value Decomposition (SVD)

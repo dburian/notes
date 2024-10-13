@@ -1,3 +1,6 @@
+---
+tags: [ml,coding]
+---
 [paper]: https://arxiv.org/abs/1710.03740
 # Mixed precision training
 

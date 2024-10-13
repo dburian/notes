@@ -1,3 +1,6 @@
+---
+tags: [ml,metric_learning]
+---
 # InfoXLM
 
 The paper written by [Chi et al. (2020)](https://arxiv.org/abs/2007.07834)

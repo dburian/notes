@@ -1,3 +1,6 @@
+---
+tags: [self_improvement]
+---
 # What to write about and how to write it -- my approach
 
 ## What

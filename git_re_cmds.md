@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 [s/progit]: sources/progit.md
 [git_three_trees]: git_three_trees.md
 

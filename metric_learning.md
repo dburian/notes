@@ -1,3 +1,6 @@
+---
+tags: [metric_learning]
+---
 # Metric learning
 
 In metric learning we map data samples onto a real-valued vector space. The task

@@ -1,3 +1,6 @@
+---
+tags: [metric_learning]
+---
 # N-pair loss
 
 N-pair loss is loss for supervised [metric learning](./metric_learning.md)

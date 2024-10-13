@@ -1,3 +1,6 @@
+---
+tags: [self_improvement]
+---
 # Project stages
 
 My last project was more complicated and longer than usual. Normally I'd do some

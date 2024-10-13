@@ -1,3 +1,6 @@
+---
+tags: [coding,python]
+---
 # Multiprocessing in Python
 
 By default python code is synchronous -- it runs in single process and in single

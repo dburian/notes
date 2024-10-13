@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml]
+---
 # LayoutLMv2
 
 Second version of LayoutLM model that combines text, layout and visual

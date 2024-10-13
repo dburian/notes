@@ -1,3 +1,6 @@
+---
+tags: [statistics]
+---
 # Z score and Z score tables
 
 Z score is simply a normalized distance to the mean:

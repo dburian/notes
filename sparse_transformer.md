@@ -1,3 +1,6 @@
+---
+tags: [efficient_transformers, transformers, ml]
+---
 [paper]: https://arxiv.org/abs/1904.10509
 # Sparse Transformer
 

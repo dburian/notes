@@ -1,3 +1,7 @@
+---
+tags: [statistics]
+---
+
 [z_score]: z_score.md
 
 # Outliers filtering

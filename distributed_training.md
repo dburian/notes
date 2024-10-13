@@ -1,3 +1,7 @@
+---
+tags: [ml,platform]
+---
+
 # Distributed training
 
 Training ML models on multiple GPUs/servers is called distributed training. The

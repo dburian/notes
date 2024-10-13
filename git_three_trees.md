@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 [s/progit]: sources/progit.md
 [git_re_cmds]: git_re_cmds.md
 [git_internals]: git_internals.md

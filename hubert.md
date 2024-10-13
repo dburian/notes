@@ -1,3 +1,6 @@
+---
+tags: [ml,speech_to_text]
+---
 # HuBERT
 
 Hidden-unit BERT (HuBERT) is a pre-trained speech recognition model introduced

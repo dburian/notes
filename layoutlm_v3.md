@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml]
+---
 # LayoutLMv3
 
 Third version of LayoutLM introduced by [Huang et

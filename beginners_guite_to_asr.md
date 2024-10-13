@@ -1,3 +1,7 @@
+---
+tags: [ml,speech_to_text]
+---
+
 # Beginners guide to ASR
 
 I write this, since I'm a beginner in speech ML (TTS, ASR/STT). This is what has

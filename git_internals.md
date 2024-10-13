@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 [s/progit]: sources/progit.md
 
 # Git internals

@@ -1,3 +1,6 @@
+---
+tags: [informatics,math]
+---
 # Fast Fourier transform
 
 Fast Fourier transform (FFT) computes [Discrete Fourier

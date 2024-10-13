@@ -1,3 +1,6 @@
+---
+tags: [ml,coding]
+---
 # Buffers vs Parameters in PyTorch
 
 PyTorch `Module` can have both parameters and buffers. Both are registered by

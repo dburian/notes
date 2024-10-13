@@ -1,3 +1,6 @@
+---
+tags: [math]
+---
 # Field
 
 In mathematics field is a set with two binary operations called addition ($+$) and

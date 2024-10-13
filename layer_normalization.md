@@ -1,3 +1,6 @@
+---
+tags: [ml]
+---
 # Layer Normalization
 
 Introduced in [a paper by Lei Ba et al. 2016](https://arxiv.org/abs/1607.06450).

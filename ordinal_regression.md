@@ -1,3 +1,6 @@
+---
+tags: [statistics]
+---
 # Ordinal regression
 
 Ordinal regression is a type of regression for predicting ordinal variables

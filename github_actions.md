@@ -1,3 +1,6 @@
+---
+tags: [platform]
+---
 # Github Actions
 
 Github Actions are Github's way of doing Contnuous Integration and Continuous

@@ -1,3 +1,6 @@
+---
+tags: [ml,platform]
+---
 [paper]: https://arxiv.org/abs/1604.06174
 [blog_post]: https://medium.com/tensorflow/fitting-larger-networks-into-memory-583e3c758ff9
 # Gradient checkpointing

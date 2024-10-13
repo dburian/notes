@@ -1,3 +1,6 @@
+---
+tags: [ml, speech_to_text]
+---
 # Connectionist Temporal Classification (CTC)
 
 CTC is an objective function for classification of token sequences introduced by

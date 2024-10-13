@@ -1,3 +1,6 @@
+---
+tags: [platform,ml]
+---
 # Docker in a nutshell
 
 Docker is an software that isolates running applications in containers. These

@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml,efficient_transformers]
+---
 [sukhbaatar_19]: https://arxiv.org/abs/1905.07799
 [hf_longformer]: https://huggingface.co/allenai/longformer-base-4096
 [paper]: https://arxiv.org/abs/2004.05150

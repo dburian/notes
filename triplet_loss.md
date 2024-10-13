@@ -1,3 +1,6 @@
+---
+tags: [metric_learning]
+---
 # Triplet loss
 
 Introduced as a part of the [FaceNet paper written by Schroff et al.

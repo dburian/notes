@@ -1,3 +1,7 @@
+---
+tags: [statistics]
+---
+
 [matrix_norms]: matrix_norms.md
 # Canonical Correlation Analysis (CCA)
 

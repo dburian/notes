@@ -1,3 +1,6 @@
+---
+tags: [ml, coding]
+---
 # Debugging cuda memory leaks in PyTorch
 
 There is a [web tool which visualizes a memory

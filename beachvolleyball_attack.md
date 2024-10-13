@@ -1,3 +1,7 @@
+---
+tags: [beachvolleyball]
+---
+
 # Beach volleyball attack
 
 This guide comes in right after a good pass.

@@ -1,3 +1,6 @@
+---
+tags: [math]
+---
 # Taylor series
 
 The formula that evaluates a function using a sum of its derivatives.

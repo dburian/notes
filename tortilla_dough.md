@@ -1,3 +1,6 @@
+---
+tags: [recipes]
+---
 # Butter tortilla dough
 
 ## Ingredients

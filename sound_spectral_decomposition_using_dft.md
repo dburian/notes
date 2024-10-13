@@ -1,3 +1,6 @@
+---
+tags: [speech_to_text]
+---
 # Sound spectral decomposition using DFT
 
 Spectral decomposition of sound signal describes how to split up any sound signal to

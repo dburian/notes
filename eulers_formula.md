@@ -1,3 +1,7 @@
+---
+tags: [math]
+---
+
 # Euler's formula
 
 The formula in complex analysis, that combines complex exponential with

@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 # Git Worktrees
 
 Git worktrees allow you to have more working directories and thereby having more

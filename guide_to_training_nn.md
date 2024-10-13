@@ -1,3 +1,6 @@
+---
+tags: [ml]
+---
 # Guide to training neural nets
 
 This note is gist of [Andrej Karpathy's

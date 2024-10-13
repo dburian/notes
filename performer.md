@@ -1,3 +1,6 @@
+---
+tags: [ml,transformers, efficient_transformers]
+---
 [paper]:https://arxiv.org/abs/2009.14794
 # Performer
 

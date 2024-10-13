@@ -1,3 +1,6 @@
+---
+tags: [statistics]
+---
 # Principal Components Analysis
 
 Dimensionality reduction technique that projects a set of points in a

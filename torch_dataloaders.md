@@ -1,3 +1,6 @@
+---
+tags: [ml,coding]
+---
 # Torch `DataLoader` in a nutshell
 
 `DataLoader` class is able to serve data to a ML model with a set of handy

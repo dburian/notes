@@ -1,3 +1,6 @@
+---
+tags: [transformers, ml]
+---
 # Transformers' self-attention
 
 Transformers self-attention computes as so:

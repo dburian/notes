@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml]
+---
 # LayoutLMv1
 
 First version of LayoutLM introduced by [Xu et al.

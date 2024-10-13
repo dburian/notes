@@ -1,3 +1,6 @@
+---
+tags: [math,speech_to_text]
+---
 # Discrete Cosine Transform
 
 Discrete Cosine Transform (DCT) is a lot like [Discrete Fourier Transform

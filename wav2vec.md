@@ -1,3 +1,6 @@
+---
+tags: [ml,speech_to_text]
+---
 # Wav2vec
 
 Wav2vec is a pre-trained speech recognition model introduced by [Baevski et al.

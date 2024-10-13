@@ -1,3 +1,6 @@
+---
+tags: [recipes]
+---
 # Pitta dough
 
 ## Ingredients

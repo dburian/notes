@@ -1,3 +1,7 @@
+---
+tags: [ml,metric_learning]
+---
+
 # Contrastive loss
 
 Contrastive loss was introduced by [Hadsell, Chopra, LeCun

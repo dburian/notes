@@ -1,3 +1,6 @@
+---
+tags: [recipes]
+---
 # Neapolitan-style pizza dough
 
 [Original recipe from Joshua Weissman](https://www.youtube.com/watch?v=_jOMIdietUQ&t=318s)

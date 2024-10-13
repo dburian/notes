@@ -1,3 +1,7 @@
+---
+tags: [ml,speech_to_text]
+---
+
 # Whisper
 
 Whisper is a pre-trained speech to text model introduced by [Radford et al.,

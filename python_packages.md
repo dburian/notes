@@ -1,3 +1,6 @@
+---
+tags: [python,coding]
+---
 # Python packages
 
 Creating python package is now very easy. So easy I would argue it should be the

@@ -1,3 +1,6 @@
+---
+tags: [ml,transformers,efficient_transformers]
+---
 [reversible_layers_paper]: https://arxiv.org/abs/1707.04585
 [paper]: https://arxiv.org/abs/2001.04451
 # Reformer

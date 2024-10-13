@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 # Git bisect
 
 

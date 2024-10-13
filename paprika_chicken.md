@@ -1,3 +1,6 @@
+---
+tags: [recipes]
+---
 # Paprika chicken
 
 ## Ingredients

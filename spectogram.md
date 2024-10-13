@@ -1,3 +1,6 @@
+---
+tags: [speech_to_text]
+---
 # Spectogram
 
 Spectogram is a visualization of frequency decomposition of a sound wave in

@@ -1,3 +1,6 @@
+---
+tags: [speech_to_text,math]
+---
 # Discrete Fourier transform
 
 Discrete Fourier transform (DFT) is a function $\mathcal{F}: \mathbb{C}^n

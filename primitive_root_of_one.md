@@ -1,3 +1,6 @@
+---
+tags: [math]
+---
 # Primitive root of 1
 
 In complex numbers, 1 has many n-th roots, but not all of them are primitive.

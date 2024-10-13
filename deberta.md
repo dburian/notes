@@ -1,3 +1,6 @@
+---
+tags: [transformers,ml]
+---
 # DeBERTa
 
 DeBERTa -- Decoding-Enhanced BERT with disentangled Attention -- is a model from

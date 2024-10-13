@@ -1,3 +1,6 @@
+---
+tags: [cmdline]
+---
 
 # Pro Git book
 

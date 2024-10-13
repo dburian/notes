@@ -1,3 +1,6 @@
+---
+tags: [python, coding]
+---
 # Python Debugger
 
 There is a python debugger called `pdb`. Don't be scared to use it.
