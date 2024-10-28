@@ -44,9 +44,9 @@ All types follow the basic computation but differ in some details. 1. is vanilla
 self-attention as it is described in the above mentioned note. 2. is the same,
 except its attention is masked out for upper diagonal to prevent the decoder
 accessing future tokens. The diagonal is not masked since the decoder's input is
-shifted by one. 3. is same as 1. except the values and keys are supplied by the
-processed sequence *at the end of the encoder*. This allows the decoder to ask
-for information from the input to generate the output.
+shifted by one. 3. is same as 1. except the **values** and **keys** are supplied
+by the processed sequence *at the end of the encoder*. This allows the decoder
+to ask for information from the input to generate the output.
 
 ### Feed-forward layers
 
@@ -69,3 +69,12 @@ doesn't disturb the gradient. The first usage of these **pre-activation
 residual** blocks in Transformers appears (AFAIK) in [Sparse transformers paper from
 2019](./sparse_transformer.md).
 
+## Training
+
+During training the encoder is fed with inputs, decoder with shifted outputs and
+we use Cross-entropy loss on the decoder outputs.
+
+## Inference
+
+During inference, decoding is done auto-regressively. Decoder predicts one token
+at a time, basing his next token prediction on the previous one.
