@@ -43,6 +43,26 @@ $$
 \mathcal{L}_G(z, \theta_G) = \mathbb{E}_{z \sim P(z)} \left[1 - \log D(G(z))\right]
 $$
 
+### Diminishing gradients
+
+Although this was the original formulation of GAN (or *Adversial*) loss, it has
+a problem with diminishing gradients. As the generator tries to minimize its
+loss, the gradient of, what is essentially a $-\log x$ flattens. Meaning its
+harder and harder to make meaningful steps and the training halts. To that end,
+oftentimes the losses are formulated with MSE loss:
+
+$$
+\begin{align}
+\mathcal{L}_D(x, \theta_D) &=
+\mathbb{E}_{x \sim P_{\text{data}}} (D(x))^2
++ \mathbb{E}_{z \sim P(z)} (1 - D(G(z)))^2 \\
+\mathcal{L}_G(z, \theta_G) &= \mathbb{E}_{z \sim P(z)} (1 - D(G(z)))^2
+\end{align}
+$$
+
+This formulation was introduced by [Mao et al.
+(2017)](https://openaccess.thecvf.com/content_ICCV_2017/papers/Mao_Least_Squares_Generative_ICCV_2017_paper.pdf).
+
 ## Problems of GANs
 
 The two problems of GANs are that:

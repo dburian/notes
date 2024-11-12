@@ -3,7 +3,8 @@ tags: [transformers, ml]
 ---
 # Transformers' self-attention
 
-Transformers self-attention computes as so:
+Transformers' self-attention comes from an [attention mechanism used in
+RNNs](./attention_in_rnn.md), that is slightly adapted:
 
 $$
 Attention(Q, K , V) = softmax(\frac{QK^T}{\sqrt d_z}) V

@@ -33,6 +33,16 @@ $$
 \sum_{m, n} I_{i\cdot S + m, j \cdot S + n, c} K_{m, n, c}
 $$
 
+### Grouped convolution
+
+Another way how to save on parameter count is to not let each output channel to
+depend on each input channel. Instead we split channels to equally sized
+**groups** and allow the convolution to compute an output for an output channel
+only from input channels in the same group. This is called a **grouped**
+convolution and can be achieved by passing parameter `groups` to a convolution
+layer. Note that the \# of input channels and \# of output channels must both be
+divisible by \# of groups.
+
 
 ## Blocks
 

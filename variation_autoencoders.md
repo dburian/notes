@@ -58,8 +58,7 @@ $-\mathcal{L}(\varphi, \theta, x)$ as:
 
 $$
 \begin{aligned}
-\mathcal{L}(\theta, \varphi; \mathbf{x}) &= \mathbb{E}_{Q_\varphi (z|x)} \left[ \log P_\theta (x) + \log P_\theta (z|x) - \log Q_\varphi (z|x) \right] \\
-&= \mathbb{E}_{Q_\varphi (z|x)} \left[ \log P_\theta (x, z) - \log Q_\varphi (z|x) \right] \\
+\mathcal{L}(\theta, \varphi; \mathbf{x})
 &= \mathbb{E}_{Q_\varphi (z|x)} \left[ \log P_\theta (x|z) + \log P(z) - \log Q_\varphi (z|x) \right] \\
 &= \mathbb{E}_{Q_\varphi (z|x)} \left[ \log P_\theta (x|z) \right] - D_{KL} \left( Q_\varphi (z|x) \| P(z) \right),
 \end{aligned}
@@ -110,4 +109,17 @@ $$
 
 The result will be differentiable w.r.t. both $\mu$ and $\sigma^2$.
 
+## Conditional VAEs
 
+Often we'd like to say what samples to generate. The solution is to pass the
+sample class both to the encoder and the decoder. We then maximize the
+log likelihood $\log P_\theta(x|c)$, for class $c$:
+
+$$
+\mathcal{L}(\theta, \varphi; \mathbf{x}, c) =
+\mathbb{E}_{Q_\varphi (z|x)} \left[
+  \log P_\theta (x|z)
+\right] - D_{KL} \left(
+  Q_\varphi (z|x) \| P(z|c)
+\right),
+$$

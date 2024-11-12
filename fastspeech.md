@@ -11,7 +11,7 @@ FastSpeech is a [Transformer](./transformer.md)-based speech-to-text model with
 faster inference speed than the autoregressive competition. FastSpeech was
 introduced by [Ren et al. (2019)][paper].
 
-The model is quite old, but I wanted to read it for two answer two questions
+The model is quite old, but I wanted to read it to answer two questions
 that crept up during reading [FastSpeech2](./fastspeech2.md):
 
 - why predicting phoneme length as part of the model (and in the middle of it)?
@@ -27,9 +27,10 @@ The whole architecture is split up to two parts:
 - phoneme processing
 - mel frame generation
 
-Both steps are done using several transformer layers. Separating the two parts,
-'*Length Regulator*' maps the $N$-long sequence of phonemes to $M$-long sequence
-of what will be mel frames. After this mapping, new positional embeddings are added.
+Both steps are done using several transformer layers. '*Length Regulator*'
+separates the two parts, which maps the $N$-long sequence of phonemes to
+$M$-long sequence of what will be mel frames. After this mapping, new positional
+embeddings are added.
 
 ### Predicting phoneme length
 
@@ -50,7 +51,12 @@ from [encoder-decoder attention](./transformer.md) coefficients.
 ### Transformer layers
 
 Transformer layers are same as in the original model except for FFN after the
-self-attention layer. FFN layer is replaced by 1D Convolution. The authors
-justified this by saying that phonemes are probably more locally dependent than
-tokens of text. I find this rather vague but their ablation study showed that 1D
-Convolutions produce more human-preferable results.
+self-attention layer. FFN layer is replaced by:
+
+- 1D 3k Convolution
+- ReLU
+- 1D 3k Convolution
+
+The authors justified this by saying that phonemes are more locally dependent
+than tokens of text. I find this rather vague but their ablation study showed
+that 1D Convolutions produce more human-preferable results.

@@ -5,28 +5,71 @@ tags: [ml,text_to_speech]
 # Beginners guide to Text-to-Speech
 
 TODOs:
-- [ ] StyleTTS 2
-- [ ] FastPitch
-- [ ] Deep Voice 3
+- [ ] flow-based models, e.g.
+    - VITS (2021)
+    - Flowtron (2020)
+    - Glow-tts (2020)
+- [ ] StyleTTS 2 (2023)
+- [ ] Deep Voice 3 (2017)
 - [ ] TransformerTTS
-- [ ] WaveNet
-- [ ] Tacotron2
-- [ ] Mixer-TTS
+- [ ] Mixer-TTS (2021)
+- [ ] Neturalspeech (2022)
 
 In text-to-speech (TTS) tasks the model is asked to predict a waveform based on
 an input text. Usually this model is actually whole system of models containing:
 
-- grapheme to phoneme transcriber -- converts spelling (letters) to pronunciation symbols
+- grapheme to phoneme transcriber -- converts spelling (letters) to
+  pronunciation symbols
+
 - mel-spectogram predictor -- predicts [mel-spectograms](./spectogram.md) from
   pronunciation symbols, **the main part of TTS systems**
+
 - vocoder -- converts mel-spectogram to waveforms
 
-There are several types of models:
+## Types of mel-spectogram generators
 
-- autoregressive: (ex. Neural speech synthesis with transformer network, Deep voice 3: 2000-speaker neural text-to-speech)
-- 
+There are several types of models for mel-spectogram generation.
 
-## Usual pipeline
+### Autoregressive
+
+> Predicting next mel frame based on the previous
+
+- Classical approach to speech synthesis which, initially, gave the best
+  results
+- RNNs with attentions or causal CNN architectures
+- the big drawback is **slow inference**, which is why these models are not
+  really used anymore
+- examples: [Tacotron 2](./tacotron_2.md) or [WaveNet](./wavenet.md)
+
+### Parallel
+
+> Predicting all frames at the same time.
+
+- Typically [Transformer](./transformer.md)-based models producing all
+  frames in a single go.
+- They need to resolve the problem of '*How many frames should I predict?*'
+    - Typically they use
+        - attention from a pre-trained autoregressive model such as Tacotron 2 or
+        - [Montreal Forced Aligner](./https://www.isca-archive.org/interspeech_2017/mcauliffe17_interspeech.pdf)
+- examples: [FastSpeech](./fastspeech.md), [FastSpeech 2](./fastspeech2.md),
+  [EfficientSpeech](./efficientspeech.md), [FastPitch](./fastpitch.md)
+
+## Types of vocoders
+
+Vocoders need to predict very high-definition output: second of speech is
+typically between 16k and 22k scalars. Ergo this is a realm of generative
+models.
+
+### GANs
+
+- Vocoders based on [Generative Adversial Networks or GANs](./generative_adversial_networks.md)
+- examples: [HifiGAN](./hifigan.md)
+
+### Flow-based
+
+- Vocoders based on [Flow networks](./flow_networks.md)
+- examples: [WaveGlow](./waveglow.md)
+
 
 ## Glossary
 
@@ -48,26 +91,21 @@ There are several types of models:
   intonation
 - vocoder: turns mel-spectograms into waveforms
 
+## Evaluation metrics
+
+### Mean Opinion Score (MOS)
+
+Mean Opinion Score (MOS) is the mean of opinion scores given by annotators. The
+annotators can score a recording on a **categorical** scale from 1-5, 5 being
+'*excelent*', 1 being '*bad*'. To compare model's generated audio, the authors
+should also disclose what was the MOS of ground truth (typically $\sim$4.5).
+
 ## Tools
 
 - [English grapheme to phoneme generator](https://github.com/Kyubyong/g2p)
 
-## Example models
-
-### Vocoders
-
-- [HifiGAN][HifiGAN] -- small dedicated vocoder used by Efficient Speech
-
-[HifiGAN]: https://proceedings.neurips.cc/paper_files/paper/2020/file/c5d736809766d46260d816d8dbc9eb44-Paper.pdf
-
 ### TTS models
 
-- [EfficientSpeech (2023)](./efficientspeech.md) -- efficient TTS system for
-  mobile and edge devices
-- [FastSpeech (2019)](./fastspeech.md) and [FastSpeech 2
-  (2020)](./fastspeech2.md) -- non-autoregressive TTS systems with quick
-  inference
+- [StyleTTS (2022)](./styletts.md) and [StyleTTS 2 (2023)](./styletts_2.md) --
+  SOTA models incorporating 'style vector' into the waveform generation
 
-### Text to speech models
-
-- [EfficientSpeech](./efficientspeech.md)
