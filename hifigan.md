@@ -5,9 +5,7 @@ tags: [ml, text_to_speech]
 
 HiFi-GAN is a [GAN](./generative_adversial_networks.md) vocoder introduced by
 [Kong et al.
-(2020)](https://proceedings.neurips.cc/paper_files/paper/2020/file/c5d736809766d46260d816d8dbc9eb44-Paper.pdf).
-
-HiFi-GAN seems to 
+(2020)](https://arxiv.org/pdf/2010.05646).
 
 ## Architecture
 
