@@ -9,7 +9,7 @@ Parallel TTS model introduced by [Łańcucki
 (2020)](https://arxiv.org/pdf/2006.06873). Similar and slightly simpler than
 [Fastspeech](./fastspeech.md), Fastpitch generates [mel
 spectograms](./spectogram.md) from input
-test. The spectograms can be then synthesized to waveform, the authors used
+text. The spectograms can be then synthesized to waveform, the authors used
 [WaveGlow](./waveglow.md).
 
 ## Architecture
@@ -44,6 +44,10 @@ Transformer layers were taken over from [FastSpeech](./fastspeech.md):
     - 1D 3k [Convolution](./convolution.md)
 - Add w/ residual
 - [Layer Norm](./layer_normalization.md)
+
+Surprisingly in a comparative study, the authors found that **the smaller the
+number of attention heads, the better**. So, the end model has only one
+attention head and 6 layers.
 
 ### Pitch and duration predictors
 
@@ -120,6 +124,12 @@ phonemes didn't show any improvement.
 
 The author also used [LAMB optimizer](./lamb_optimizer.md), instead of
 [Adam](./adam.md)-related.
+
+The experiments showed that Fastpitch + [WaveGlow](./waveglow.md) is slightly
+better in terms of [Mean Opinion Score](./beginners_guide_to_tts.md) than
+[Tacotron 2](./tacotron_2.md) + WaveGlow. Both in the single speaker and in
+multi-speaker scenarios. Additionally, the authors show that Fastpitch produces
+mel spectograms significantly faster.
 
 ### Multiple speakers extension
 

@@ -2,7 +2,7 @@
 tags: [ml, speech_to_text]
 ---
 
-[paper]: https://proceedings.neurips.cc/paper_files/paper/2019/file/f63f65b503e22cb970527f23c9ad7db1-Paper.pdf
+[paper]: https://arxiv.org/pdf/1905.09263
 [transformer_tts_paper]: https://d1wqtxts1xzle7.cloudfront.net/107383662/1809.08895v2-libre.pdf?1700031865=&response-content-disposition=inline%3B+filename%3DClose_to_Human_Quality_TTS_with_Transfor.pdf&Expires=1730048288&Signature=c22bhjoiwMqUgo0Y5-Sk6EVtKP98r35wkkn74gn1r2pEUVlbg4FdQ3GIwSVqYER6GekdPdXwQRlo4FPnOm~O4Mpvz4bJK7H6Y5KpBXw0vr5beNCNHnLYARE2eHeHN53EfzppbMKNWQt5WYdSkRHDtVyxlYbLYfP-CRC02DCg4m6Amn8iJacYkFoK1OgmG5iQUb1fNXkH1AD-jfpSsScMbbyqxUEiegEtRA7HZbZq8QP2uiJVPBb05UaA6R3cEVB38Deva~p9-D7PcL44xJHQaXHQChJ479z7E3U510tIIc~gVO-l285nd~A1QoaP~TaoZTG-kPqRBZ6Gr~3cfiZDDg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA
 
 # FastSpeech
