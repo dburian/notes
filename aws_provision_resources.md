@@ -14,7 +14,7 @@ or automatically.
 We can use 3 ways:
 
 - Management Console -- web UI useful for setting up test environments
-- CLI -- useful for scripting & automation
+- [CLI](./aws_cli.md) -- useful for scripting & automation
 - SKDs -- libraries in various languages that do the heavy lifting
 
 ## Automatically
