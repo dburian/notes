@@ -123,3 +123,10 @@ $$
   Q_\varphi (z|x) \| P(z|c)
 \right),
 $$
+
+---
+More resources:
+
+- [In-depth theoretical look at conditional VAEs](https://beckham.nz/2023/04/27/conditional-vaes.html)
+- [Overview of generative models, with focus on VAEs](https://www.youtube.com/watch?v=iL1c1KmYPM0)
+
