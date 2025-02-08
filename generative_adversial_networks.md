@@ -79,6 +79,6 @@ The two problems of GANs are that:
 Even though GANs generated higher quality samples than [Variational
 Autoencoders](./variation_autoencoders.md), due to these problems VAEs were the
 way to go to generate samples. However, eventually, [Diffusion
-models](./diffusion_model.md) took over.
+models](./diffusion_probabilistic_model.md) took over.
 
 
