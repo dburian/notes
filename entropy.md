@@ -7,7 +7,8 @@ tags: [information_theory]
 Entropy of a random variable $P$ is defined as:
 
 $$
-H(P) = \mathbb{E}_{x \sim P(x)} \left[I(x)\right] = - \mathbb{E}_{x \sim P(x)} \left[\log P(x)\right],
+H(P) = \mathbb{E}_{x \sim P(x)} \left[I(x)\right] =
+  - \mathbb{E}_{x \sim P(x)} \left[\log P(x)\right],
 $$
 
 where $I(x) = -\log P(x)$ is *self-information*. Self-information describes the
