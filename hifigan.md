@@ -10,13 +10,13 @@ HiFi-GAN is a [GAN](./generative_adversial_networks.md) vocoder introduced by
 ## Architecture
 
 As a GAN, HiFi-GAN is composed of 2 models: generator and discriminator.
-Generator generates waveforms from [mel spectograms](./spectogram.md) and
+Generator generates waveforms from [mel spectrograms](./spectrogram.md) and
 discriminator classifies waveforms as true (coming from training data) or fake
 (coming from the generator).
 
 ### Generator
 
-The main task of the generator is to upsample mel-spectogram, which is
+The main task of the generator is to upsample mel-spectrogram, which is
 understood as **1d input with several channels**, to match the resolution of the
 waveform.
 
@@ -54,7 +54,7 @@ the input, regardless of the dilatation.
 
 #### As a whole
 
-The generator then gradually upsamples the mel spectogram, each time processing
+The generator then gradually upsamples the mel spectrogram, each time processing
 it through several CNN networks each with different kernel. Therefore each CNN
 network has different notion of locality. However, all of them have increased
 receptive field through repeated dilated convolutions.
@@ -71,7 +71,7 @@ In practice the biggest model had:
     - 4, (2x upsample)
     - in total this means 256x upsampling, which corresponds to having 256
       tokens
-    - meaning the hop size of the generated mel-spectogram must be 256
+    - meaning the hop size of the generated mel-spectrogram must be 256
 - 3 ResBlocks all with the same dilatations, but different kernel sizes
     - kernel sizes were 3, 7, 11
 - 6 repetitions of activation + Convolution inside each ResBlock
@@ -138,7 +138,7 @@ The generator and all the discriminators are trained using several losses:
 - adversary loss $\mathcal{L}_{Adv}$ -- discriminators try to beat generator and
   the other way around
 - mel-spectrum loss $\mathcal{L}_{Mel}$ -- forces generator to return
-  mel-spectogram-equivalent waveform
+  mel-spectrogram-equivalent waveform
 - feature matching loss $\mathcal{L}_{FM}$ -- additional signal to generator
 
 I define the losses for one discriminator only, the total loss, shown at the
@@ -157,12 +157,12 @@ $$
 \end{align}
 $$
 
-where $x$ is the ground truth audio, $s$ is the mel-spectogram of $x$.
+where $x$ is the ground truth audio, $s$ is the mel-spectrogram of $x$.
 
 ### Mel-spectrum loss
 
 At the begining, it helps to stabilize the training of GANs with additional goal
-like: *mel spectograms of the outputs should be equal to the input*. This is
+like: *mel spectrograms of the outputs should be equal to the input*. This is
 called a *reconstruction loss* and was shown to benefit also the quality of the
 generated solutions.
 
@@ -170,7 +170,7 @@ $$
 \mathcal{L}_{Mel}(G) = \mathbb{E}_{(x, s)} \big[ \|\phi(x) - \phi(G(x))\|_1 \big]
 $$
 
-where $\phi(x)$ is function that transforms a waveform into a mel-spectogram.
+where $\phi(x)$ is function that transforms a waveform into a mel-spectrogram.
 As I mention below, the authors use fairly large weight, suggesting
 **mel-spectrum loss is important for convergence**.
 
@@ -213,16 +213,16 @@ All scores are given as [MOS scores](./beginners_guide_to_tts.md). In all
 experiments samples generated with HiFiGAN are just below the ground truth in
 terms of MOS.
 
-### Mel-spectogram synthesis evaluation on unseen speekers
+### Mel-spectrogram synthesis evaluation on unseen speekers
 
 Experiments shown Hifi-GAN is superior to MelGAN, [WaveGlow](./waveglow.md) and
 [WaveNet](./wavenet.md) when evaluating on unseen speekers. The evaluation was
-done by generating the audio samples to mel-spectograms and judging the
+done by generating the audio samples to mel-spectrograms and judging the
 synthesized waveforms.
 
 ### End-to-end evaluation with Tacotron 2
 
-The authors also compared HifiGAN in an end-to-end training. For mel-spectogram
+The authors also compared HifiGAN in an end-to-end training. For mel-spectrogram
 generation they used [Tacotron 2](./tacotron_2.md) and showed that in this
 setting HiFiGAN is superior to [WaveGlow](./waveglow.md).
 

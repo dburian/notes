@@ -13,7 +13,7 @@ There are 4 features that differentate StyleTTS 2 from its previous version:
 - Style Diffusion -- style vector is generated with diffusion from input
   phonemes, meaning the system can produce speech without reference audio
 
-- StyleTTS 2 predicts waveform, not just mel-spectogram. Meaning its an
+- StyleTTS 2 predicts waveform, not just mel-spectrogram. Meaning its an
   *end-to-end* system, that **can be trained all at once**.
 
 - To make the end-to-end training possible, the authors designed a

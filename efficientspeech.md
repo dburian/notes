@@ -29,7 +29,7 @@ The model is devided into several parts:
 2. acoustic features predictor -- predicts pitch, energy and duration
 3. feature fuser and upsampler -- concatenates acoustic features w/
    contextualized phonemes and repeats phonemes according to their duration
-4. mel spectogram predictor -- predicts mel spectograms from fused mel-frame
+4. mel spectrogram predictor -- predicts mel spectrograms from fused mel-frame
    features
 
 
@@ -64,7 +64,7 @@ Feature fuser concatenates the embedded acoustic features with contextualized
 phoneme features. Then the phoneme features are turned into mel frame features
 by repeating them according to the predicted phonemes' durations.
 
-### Mel spectogram predictor
+### Mel spectrogram predictor
+To predict the final spectrogram combination of depth-wise separable
 
-To predict the final spectogram combination of depth-wise separable
 convolutions, linear layers, tanh activations and layer norms are used.

@@ -10,7 +10,7 @@ FastSpeech 2 was introduced by [Ren et al.
 are:
 
 1. The model not-only predicts length, but also pitch and energy.
-2. No student-teacher training. Mel-spectograms are learned directly, and
+2. No student-teacher training. Mel-spectrograms are learned directly, and
    phoneme duration is extracted using ...
 
 ## Architecture

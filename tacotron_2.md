@@ -6,7 +6,7 @@ tags: [ml, text_to_speech]
 
 RNN-based TTS model introduced by [Shen et al.
 (2017)](https://arxiv.org/pdf/1712.05884). Tacotron 2 predicts mel
-[spectogram](./spectogram.md) frames from characters of the input text. Mel
+[spectrogram](./spectrogram.md) frames from characters of the input text. Mel
 frames are predicted **autoregressive-ly**, where the prediction of the next mel
 frame is dependent on the previous one. Therefore the model can only predict one
 frame at a time, which makes inference considerably slow.

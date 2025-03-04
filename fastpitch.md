@@ -8,8 +8,8 @@ tags: [ml, text_to_speech]
 Parallel TTS model introduced by [Łańcucki
 (2020)](https://arxiv.org/pdf/2006.06873). Similar and slightly simpler than
 [Fastspeech](./fastspeech.md), Fastpitch generates [mel
-spectograms](./spectogram.md) from input
-text. The spectograms can be then synthesized to waveform, the authors used
+spectrograms](./spectrogram.md) from input
+text. The spectrograms can be then synthesized to waveform, the authors used
 [WaveGlow](./waveglow.md).
 
 ## Architecture
@@ -24,7 +24,7 @@ predictor predict pitch $\mathbf{\hat{p}}$ and duration $\mathbf{\hat{d}}$ for
 each characters. Pitches are then projected to the hidden representation's
 dimension $\mathbf{h}_{p}$ and added with them $\mathbf{g} = \mathbf{h} +
 \mathbf{h}_{p}$. These sums are repeated according to durations. These
-repetitions are contextualized again to predict mel spectogram frames
+repetitions are contextualized again to predict mel spectrogram frames
 $\mathbf{\hat{y}}$.
 
 ![FastPitch architecture. Figure 1. in
@@ -63,7 +63,7 @@ Conv.
 ## Training
 
 There are 3 losses:
-- mel spectogram loss
+- mel spectrogram loss
 - pitch loss
 - duration loss
 
@@ -81,7 +81,7 @@ $$
 To obtain true pitches authors used a method based on autocorrelation of signal
 described in [separate paper][pitch_extract_paper]. The idea of it is:
 
-1. Apply windows to obtain signals per each mel spectogram frame.
+1. Apply windows to obtain signals per each mel spectrogram frame.
 2. On each windowed signal $x$ apply autocorrelation function:
 
 $$
@@ -129,7 +129,7 @@ The experiments showed that Fastpitch + [WaveGlow](./waveglow.md) is slightly
 better in terms of [Mean Opinion Score](./beginners_guide_to_tts.md) than
 [Tacotron 2](./tacotron_2.md) + WaveGlow. Both in the single speaker and in
 multi-speaker scenarios. Additionally, the authors show that Fastpitch produces
-mel spectograms significantly faster.
+mel spectrograms significantly faster.
 
 ### Multiple speakers extension
 

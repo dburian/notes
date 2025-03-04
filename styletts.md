@@ -19,7 +19,7 @@ Style TTS is a system of 8 modules:
    sample
 3. speech decoder $G(h_\text{text} \cdot a_\text{pred}, E(\tilde{x}),
    \hat{p}_\tilde{x}, \hat{n}_\tilde{x}) \rightarrow x_\text{pred}$ -- predicts mel
-   spectogram given
+   spectrogram given
     - aligned phonemes representations,
     - style vector,
     - desired pitch and
@@ -43,10 +43,10 @@ predictors, 6.-8. utility modules used for training $G$.
 
 During training several moduels are trained.
 
-**Speech decoder** is trained to match the original mel spectogram, along with
+**Speech decoder** is trained to match the original mel spectrogram, along with
 other losses that take into an account the output of the discriminator. For
 example there is the adversarial loss that operates on true input $x$ and
-predicted mel spectogram $\hat{x}$ similar as in
+predicted mel spectrogram $\hat{x}$ similar as in
 [GANs](./generative_adversial_networks.md).
 
 **Style encoder** is trained jointly with speech decoder.

@@ -21,14 +21,14 @@ an input text. Usually this model is actually whole system of models containing:
 - grapheme to phoneme transcriber -- converts spelling (letters) to
   pronunciation symbols
 
-- mel-spectogram predictor -- predicts [mel-spectograms](./spectogram.md) from
+- mel-spectrogram predictor -- predicts [mel-spectrograms](./spectrogram.md) from
   pronunciation symbols, **the main part of TTS systems**
 
-- vocoder -- converts mel-spectogram to waveforms
+- vocoder -- converts mel-spectrogram to waveforms
 
-## Types of mel-spectogram generators
+## Types of mel-spectrogram generators
 
-There are several types of models for mel-spectogram generation.
+There are several types of models for mel-spectrogram generation.
 
 ### Autoregressive
 
@@ -89,7 +89,7 @@ models.
 
 - prosody: properties of larger phonetic segments such as rhythm, stress and
   intonation
-- vocoder: turns mel-spectograms into waveforms
+- vocoder: turns mel-spectrograms into waveforms
 
 ## Evaluation metrics
 

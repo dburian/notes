@@ -6,7 +6,7 @@ tags: [speech_to_text]
 Spectral decomposition of sound signal describes how to split up any sound signal to
 pure frequencies the sound is made up of. This is done using [Discrete Fourier
 transform (DFT)](./discrete_fourier_transform.md). The result of spectral
-decomposition is a [spectogram](./spectogram.md).
+decomposition is a [spectrogram](./spectrogram.md).
 
 
 

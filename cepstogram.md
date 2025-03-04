@@ -5,10 +5,10 @@ tags: [ml, speech_to_text]
 # Cepstogram
 
 Cepstograms are visualizations of a signal in sound processing. Due to being
-kind of inverse [spectograms](./spectogram.md), they were named with first 4
+kind of inverse [spectrograms](./spectrogram.md), they were named with first 4
 letters reversed (a theme that will be soon apparent).
 
-Cepstograms are a result of further spectral analysis of a spectogram (i.e.
+Cepstograms are a result of further spectral analysis of a spectrogram (i.e.
 spectral analysis of a spectral analysis). While the original cepstogram used an
 inverse of [Discrete Fourier Transform](./discrete_fourier_transform.md),
 nowadays [Discrete Cosine Transform](./discrete_cosine_transform.md) is
@@ -25,9 +25,9 @@ The original cepstogram were created as follows:
 
 ### Mel cepstogram and Mel-frequency Cepstral Coefficients (MFCCs)
 
-Mel cepstograms come from [Mel spectograms](./spectogram.md). The additional
+Mel cepstograms come from [Mel spectrograms](./spectrogram.md). The additional
 step is only to apply [Discrete Cosine Transform
-(DCT)](./discrete_cosine_transform.md) as if the spectogram frame was a signal.
+(DCT)](./discrete_cosine_transform.md) as if the spectrogram frame was a signal.
 
 The core idea is that we'd like to explain the frequency spectrum for a
 particular frame of given signal. To explain the frequency spectrum, we

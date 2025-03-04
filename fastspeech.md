@@ -18,7 +18,7 @@ that crept up during reading [FastSpeech2](./fastspeech2.md):
 - why using 1D Convolutions in Transformer layers instead of the typical FFN?
 
 The premise of the model is to avoid the slow autoregressive [mel
-spectogram](./spectogram.md) prediction, thereby making the prediction parallel
+spectrogram](./spectrogram.md) prediction, thereby making the prediction parallel
 and much quicker.
 
 ## Architecture
