@@ -10,7 +10,7 @@ information](./self_information.md) describe model's output distribution.
 It is defined as negative log-likelihood computed with logarithm of base $2$ or:
 
 $$
-\mathbb{E}_p - \frac{log p(x)}{log 2}
+\mathbb{E}_p - \frac{\log p(x)}{\log 2}
 $$
 
 I couldn't find much information about the metric itself, so I can only guess
