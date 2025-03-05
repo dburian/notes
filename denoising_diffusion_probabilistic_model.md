@@ -766,6 +766,17 @@ During the experiments the authors found out that:
    simplified objective, training the model to predict the noise turned out to
    produce the best outputs.
 
+### NLL/Bits per dimension/codelengths
+
+The authors talk about NLL (negative log likelihood) as if the model could
+generate one, which is confusing, because it clearly doesn't (otherwise we
+wouldn't need ELBO). It turns out that when the authors state facts as *"...our
+lossless codelengths are better than..."* they mean lower boundary of
+NLL/[lossless codelengths](./lossless_codelengths.md) that stems from ELBO. I
+deduced it from their
+[implementation](https://github.com/hojonathanho/diffusion/blob/1e0dceb3b3495bbe19116a5e1b3596cd0706c543/diffusion_tf/diffusion_utils_2.py#L313).
+I don't know why they don't clearly state its a lower bound, not the actual
+likelihood.
 
 TODO: FID
 

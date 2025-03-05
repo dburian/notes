@@ -11,8 +11,6 @@ H(P) = \mathbb{E}_{x \sim P(x)} \left[I(x)\right] =
   - \mathbb{E}_{x \sim P(x)} \left[\log P(x)\right],
 $$
 
-where $I(x) = -\log P(x)$ is *self-information*. Self-information describes the
-amount of *surprise* in an event. The more sure the event is going to be, the
-less surprising it is.
-
-So, entropy tells us the expected amount of surprise in a distribution.
+where $I(x) = -\log P(x)$ is [*self-information*](./self_information.md).
+Entropy tells us the expected amount of self-information or surprise in a
+distribution.
