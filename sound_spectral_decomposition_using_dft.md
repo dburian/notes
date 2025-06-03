@@ -26,6 +26,19 @@ functions with non-matching frequencies cancel-out.
 
 ## Proof
 
+The proof is illustrative:
+
+1. We consider a pure frequency signals with different phases: $s^k$ and $c^k$,
+   where $k$ is the frequency.
+2. We then show, that by computing DFT of such signal we get an array of numbers
+   $\mathcal{F}(s^k)_j$ (amplitudes per frequency), where only one amplitude $j
+   = k$ is non-zero.
+3. We don't show it here, but the proof continues to show, that any sound is a
+   combination of $s^k$ and $c^k$ for different $k$.
+4. Then it can be shown that DFT of any such combination is again array of
+   amplitudes per frequency, which are non-zero only if the combination
+   contained corresponding pure frequency.
+
 ### Projecting pure frequencies through DFT
 
 Take a sine and cosine with normalized frequency $k$ (meaning $k$ periods per
@@ -99,24 +112,6 @@ previous sentence:
 - when the peridicity of $s^k$ agreed with period of our complex function, we
   get non-zero coefficient, otherwise we get zero
 
-#### Note about frequency range
-
-Notice that the range for $k$ is $[1, \ldots, n/2 - 1]$, since:
-- for $k = 0$, $\s^k = 0$
-- for $k = n/2$, $\s^{n/2}_t = \sin\left(\frac{2{\pi}n}{2} \frac{t}{n}\right) = \sin{t\pi} = 0$
-- for $k = n/2 + l$:
-$$
-\begin{align}
-\s^{n/2 + l}_t &= \sin\left(2{\pi}  \left(\frac{n}{2} + l\right) \frac{t}{n} \right) \\
-&= \sin\left(t\pi + l2\pi \frac{t}{n}\right) \\
-&= \pm \sin\left(\frac{2l{\pi}t}{n}\right)
-\end{align}
-$$
-
-So by running $n$ samples though DFT, we get information about $n$ frequencies,
-but only half of them are unique. The second half of frequencies, mirrors the
-first one.
-
 #### Cosine
 
 We could do all of the above for $\cos$ and $\c^k$ as well. We'd get:
@@ -124,11 +119,37 @@ We could do all of the above for $\cos$ and $\c^k$ as well. We'd get:
 - for $j = n - k$: $\mathcal{F}(\c^k)_{n-k} = 1/2$
 - otherwise: $\mathcal{F}(\c^k)_j = 0$
 
+#### Note about frequency range
+
+Note that the above holds only for $k \in [1, \ldots, n/2 - 1]$. In other words,
+DFT on $n$ samples can only capture amplitudes of frequencies that are lower or
+equal to $n/2 - 1$.
+
+This is because:
+
+- for $k = 0$, $\s^k = 0$
+- for $k = n/2$, $\s^{n/2}_t = \sin\left(\frac{2{\pi}n}{2} \frac{t}{n}\right) = \sin{t\pi} = 0$
+- for $k = n/2 + l$:
+$$
+\begin{align}
+\s^{n/2 + l}_t &= \sin\left(2{\pi}  \left(\frac{n}{2} + l\right) \frac{t}{n} \right) \\
+&= \sin\left(t\pi + l2\pi \frac{t}{n}\right) \\
+&= \pm \sin\left(2l{\pi}\frac{n}{t}\right) \\
+&= \pm \s^l_t
+\end{align}
+$$
+
+So by running $n$ samples though DFT, we get information about $n$ frequencies,
+but only half of them are unique. The second half of frequencies, mirrors the
+first one.
+
+The same explanation can be drawn for $c^k$.
+
 ### Assembling pure frequencies into arbitrary sound
 
 Now that we know how pure sounds manifest in DFT, we can decompose arbitrary
 sound into pure sounds. The theorem is as follows: For each sampled signal $x$,
-there exist $\alpha_0, \ldots, \alpha_n/2$ and $\beta_0, \ldots, \beta_n/2$
+there exist $\alpha_0, \ldots, \alpha_{n/2}$ and $\beta_0, \ldots, \beta_{n/2}$
 s.t.:
 
 $$
@@ -153,27 +174,28 @@ The proof applies inverse DFT to both sides, and examines the vectors by the
 elements. Since $s^k$ and $c^k$ are going to be non-zero at that position only
 for some $k$, we can reverse engineer the $\alpha$s and $\beta$s.
 
-### So which frequencies are there?
+## So which frequencies are there?
 
-It is not obvious what is the frequency unit of $s^k$. Let's say we have a
-signal with samplig rate ($\operatorname{sr}$) 16k, and we project 1000 samples
-through DFT. There is some $k$ for which $\mathcal{F}_j$ is non-zero and we
-figure out $\alpha_k$ and $\beta_k$, which give us the **amplitude** of the pure
-signal. The frequecy is goverend by $k$, but how many Hz is that?
+We've asserted that we can identify pure frequencies in arbitrary sounds: if
+there is some $s^k$ or $c^k$ in the sound mixture, we get non-zero $\beta_k$ and
+$\alpha_k$. But what frequency is represented by $s^k$ (or $c^k$)?
 
-To answer that question, think about how we are comparing $\s^k$ and our signal.
-The periodicity of $s^k$ (equal chain of thought can be applied to $c^k$) and
-our signal agrees over the sampled points. So $\s^k$ does:
-- $k$ iterations over $n$ points
-- each iteration lasts $\frac{n * T}{k}$ seconds, where $T =
-  1/\operatorname{sr}$ is the time of a sample (its 'duration')
-- the frequency of $s^k$ is therefore $\frac{1}{\frac{n*T}{k}} = \frac{k}{n*T} =
-  \frac{k * \operatorname{sr}}{n}$
+We can think of the frequency of $s^k$. It does:
+- $k$ iterations over one unit of time
+- $k$ iterations over $n$ points, since we sampled each unit of time $n$ times
+- $\frac{k}{n}$ iterations over single point
+- $\frac{k}{n} * \text{sr}$ over one second of the original signal with sample rate
+  $\text{sr}$
 
-The thought process can also go as so:
-- $\s^k$'s frequency is $k$ per unit of time
-- or $\frac{k}{n}$ per one sample
-- or $\frac{k}{n} * \operatorname{sr}$ per one second (since there are
-  $\operatorname{sr}$ samples per second)
+And so by running DFT on $n$ points on signal with sample rate $\text{sr}$, we
+get an array of amplitudes:
 
-And so DFT's coefficients equally cover the frequencies up to our sampling rate.
+| DFT index ($=k$, $=j$) | Frequency it represents |
+| ---------------------- | ----------------------- |
+| $0$                    | $0$                     |
+| $1$                    | $\frac{\text{sr}}{n}$   |
+| ...                    | ...                     |
+| $k$                    | $\frac{k}{n} * \text{sr}$ |
+| ...                    | ...                     |
+| $n/2$                  | $\frac{\text{sr}}{2}$   |
+| $n/2 + 1$              | $\frac{\text{sr}}{2} + 1$ |
