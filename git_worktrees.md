@@ -20,7 +20,7 @@ each directory holds. Linked worktrees can be deleted, without any fuss. But
 deleting your main worktree which holds the `.git` directory will purge entire
 code base (together with unpushed history).
 
-Create bare repo like so:
+Clone a repo like so:
 
 ```bash
 # Inside your project folder
@@ -46,6 +46,45 @@ git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 All worktree-related operations are done with `git worktree`
 
+## Creating bare repo
+
+Creating bare repo is not really something I'd advise. You basically create just
+the scaffolding, but have no way to "populate it" with branches. In order to do
+that you have to clone it somewhere else in your system to a non-bare repo and
+basically do a loop:
+
+1. Init bare repo
+```bash
+mkdir -p CoolRepo/.bare
+cd CoolRepo/.bare
+git init --bare
+```
+
+2. Clone it in a newly initialized non-bare repo on your system
+```bash
+cd ../../
+mkdir CoolRepoClone
+cd CoolRepoClone
+git init .
+
+git clone ../CoolRepo/.bare
+```
+3. Do a commit in non-bare repo
+```bash
+touch README.md
+git add README.md
+git c -m "Initial commit"
+```
+4. Push the commit into the bare repo
+```bash
+git push ../CoolRepo/.bare main
+```
+
+5. Now you can create a worktree in your bare repo
+```bash
+cd ../CoolRepo
+git worktree add main
+```
 
 
 

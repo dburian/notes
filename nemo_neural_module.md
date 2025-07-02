@@ -103,11 +103,10 @@ checkpoints) into Lightning's `LightningModule`. Quite surprisingly,
 
 ## Configuration
 
-NeMo's `NeuralModule` are configurable through
-[OmegaConf](https://omegaconf.readthedocs.io) and
-[Hydra](https://hydra.cc/docs/1.3/intro/). OmegaConf takes care of parsing
-dicts/yamls and converting them to object with unified API. Hydra steps in to
-get configurable, hierarchical configuration from CLI.
+NeMo's `NeuralModule` are configurable through [OmegaConf](./omegaconf.md) and
+[Hydra](./hydra.md). OmegaConf takes care of parsing dicts/yamls and converting
+them to object with unified API. Hydra steps in to get configurable,
+hierarchical configuration from CLI.
 
 Each `NeuralModule` gets a default config.
 

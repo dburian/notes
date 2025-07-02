@@ -58,11 +58,12 @@ advise (even though it might not be necessary) to also avoid casting paths to
 
 When casting a column with dicts w/ `array` key, `datasets` encodes it, together
 with `sampling_rate` into `bytes`, which are then stored. In my experience, this
-resulted in precision/rounding errors, somewhere in these to steps:
+resulted in precision/rounding errors (~$e^{-5}$), somewhere in these to steps:
 1. array of floates is encoded into bytes and stored
 2. upon access the bytes are decoded into array of floates
 
-#### Prefer casting from `bytes`
+
+### Prefer casting from `bytes`
 
 In my experience the best way how to embed audios is to load them into bytes
 first:
