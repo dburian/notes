@@ -31,5 +31,5 @@ layer output.
 ## Practice
 
 There is a `torch.nn.utils.weight_norm` function that modifies given Parameter,
-replacing its 'weight' by 'weight_v' and 'weight_g' parameters, and recomputing
+replacing its `weight` by `weight_v` and `weight_g` parameters, and recomputing
 the original weight before every `forward` with a hook.

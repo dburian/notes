@@ -23,3 +23,19 @@ TODO:
 - Contrastive loss
 - diversity loss for the masked prediction
 - usage of SpecAugment during fine-tuning
+
+## TMP notes
+
+### Model
+
+- Feature encoder $f: \mathcal{X} \leftarrow \mathcal{Z}$
+  - The input is normalized to zero mean and unit variance
+  - The stride determines number of time-steps $T$ for LM
+  - Layers:
+    - temproal convolution
+    - [layer normalization](./layer_normalization.md)
+    - GeLU
+- LM $g: \mathcal{Z} \leftarrow \mathcal{C}$
+  - contextualizes $T$ representations given by feature encoder
+
+
