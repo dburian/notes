@@ -7,12 +7,12 @@ tags: [recipes]
 
 ## Ingredients
 
-For 3 pizzas:
+For 4 pizzas:
 
-- 307g of water heated to 35 degrees Celsia
-- 2g of instant yeast
-- 480g of 00 flour
-- 10g of salt
+- 409g of water heated to 35 degrees Celsia
+- 2.5g of instant yeast
+- 640g of 00 flour
+- 13g of salt
 - some olive oil for handling
 
 ## Steps
@@ -27,7 +27,7 @@ For 3 pizzas:
 - Repeat slaping and folding the dough until very smooth
 - Roll into a taught ball, put in olive-oil greased large bowl and let rest in
   the fridge **covered** for 14-18h
-- Once rested, punch air out of the dough and split it into 3 pieces, each
+- Once rested, punch air out of the dough and split it into 4 pieces, each
   weighing roughly 250g
 - Strech corners of each piece, folding them over to create a *seam*, turn
   each piece on its seam, then form smooth taught balls

@@ -13,7 +13,7 @@ tags: [recipes]
 - 1 teaspoon of vanilla extract
 - pinch of salt
 - 195 g all-purpose flour
-- 55 g melted butter
+- 20 g melted butter
 
 ## Steps
 
