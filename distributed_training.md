@@ -47,9 +47,42 @@ The above process group will act as the default process group for each
 processor. Meaning that every distributed module created on given processor will
 synchronize its state across processors in this, just initialized process group.
 
-### Torch spawn/run
+### Torch multiprocessing's `spawn`
 
-TODO
+I don't know much about this, but if we have a training script, we can just:
+
+1. Collect the parameters (configs, command arguments, ...)
+2. Abstract training into a function (e.g. `train`)
+3. Use `torch.multiprocessing.spawn` to spawn more processes with given
+   function:
+
+```python
+import torch.multiprocessing as mp
+from torch.distributed import init_process_group
+
+def train(rank:int, a, h):
+    if h.num_gpus > 1:
+        # initialize distributed
+        init_process_group(
+            backend=h.dist_config["dist_backend"],
+            init_method=h.dist_config["dist_url"],
+            world_size=h.dist_config["world_size"] * h.num_gpus,
+            rank=rank,
+        )
+...
+
+if __name__ == '__main__':
+    ...
+
+    if h.num_gpus > 1:
+        mp.spawn(
+            train,
+            nprocs=h.num_gpus,
+            args=(a, h),
+        )
+    else:
+        train(0, a, h)
+```
 
 ### `DistributedDataParallel`
 
@@ -63,8 +96,29 @@ gradients are all the same on each processor.
 
 `DDP` is not responsible for distributing data, only gradients.
 
-### Data distribution
+### Data distribution with `DistributedSampler`
 
-TODO
+To distribute data with `DistributedDataParallel` we can use
+`DistributedSampler` together with `DataLoader`. If `torch.distributed` is
+available (i.e. `torch.distributed.is_available()` evaluates to `True` -- I
+assume it is when we initialize distributed as for each process as seen above)
+then we can just wrap our training set with `DistributedSampler` and use it as a
+`sampler` when initializing `DataLoader`:
 
 
+```python
+
+trainset = [batch for batch in ...]
+
+train_sampler = DistributedSampler(trainset)
+
+train_loader = DataLoader(
+    trainset,
+    sampler=train_sampler,
+    ...
+)
+```
+
+With `torch.distributed` `DistributedSampler` figures out on its own the number
+of gpus, which rank is the current one and everything else. Then it distributes
+the trainset across used GPUs.
