@@ -36,7 +36,7 @@ The model is devided into several parts:
 ### Feature encoder
 
 Feature encoder is composed of two blocks that consist of:
-- [Depth-separable convolution](./convolution.md)
+- [Depth-separable convolution](./convolution_in_ml.md)
 - Self-attention layer
 - 1D Convolution
 - plus some [Layer Norms](./layer_normalization.md) mixed in

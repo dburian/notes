@@ -39,9 +39,9 @@ Transformer layers were taken over from [FastSpeech](./fastspeech.md):
 - Add w/ residual
 - [Layer Norm](./layer_normalization.md)
 - FFN block
-    - 1D 3k [Convolution](./convolution.md)
+    - 1D 3k [Convolution](./convolution_in_ml.md)
     - ReLU
-    - 1D 3k [Convolution](./convolution.md)
+    - 1D 3k [Convolution](./convolution_in_ml.md)
 - Add w/ residual
 - [Layer Norm](./layer_normalization.md)
 

@@ -3,7 +3,8 @@ tags: [ml, text_to_speech]
 ---
 # HiFi-GAN
 
-HiFi-GAN is a [GAN](./generative_adversial_networks.md) vocoder introduced by
+HiFi-GAN is a [GAN](./generative_adversial_networks.md)
+[vocoder](./beginners_guide_to_tts.md) introduced by
 [Kong et al.
 (2020)](https://arxiv.org/pdf/2010.05646).
 
@@ -123,7 +124,7 @@ ways:
 - 2x average pooling
 - 4x average pooling
 
-MSDs are CNNs composed of strided and [grouped convolutions](./convolution.md)
+MSDs are CNNs composed of strided and [grouped convolutions](./convolution_in_ml.md)
 with leaky ReLU activations. All except the first MSDs are weight normalized.
 The first MSD is *spectral normalized* -- a normalization developed to keep
 GAN's training stable introduced by [Miyato et al.
@@ -143,6 +144,24 @@ The generator and all the discriminators are trained using several losses:
 
 I define the losses for one discriminator only, the total loss, shown at the
 end, sums the respective losses for all discriminators.
+
+### Training loop
+
+The training loop is quite simple:
+1. Process true audio to obtain true mel
+2. Run true mel through generator to obtain generated mel
+3. Discriminator's gradient is zeroed out
+4. Generated and true mel are ran through descriminators to obtain
+   discriminators' losses
+5. Discriminators' losses are propagated and assigned to params
+6. Generator's gradients are zeroed out
+7. Generator's losses are computed, propagated and assigned to params
+
+In other words its:
+1. Generator
+2. Discriminator
+3. All the losses are propagated but generator's and discriminator's losses are
+   propagated separately
 
 ### Adversary loss
 

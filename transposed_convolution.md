@@ -4,7 +4,7 @@ tags: [ml]
 # Transposed convolution
 
 Transposed convolution is a sort-of reversed [regular
-convolution](./convolution.md) that can upscale the input.
+convolution](./convolution_in_ml.md) that can upscale the input.
 
 
 ## Derivation of the formula
