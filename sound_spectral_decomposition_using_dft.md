@@ -199,3 +199,7 @@ get an array of amplitudes:
 | ...                    | ...                     |
 | $n/2$                  | $\frac{\text{sr}}{2}$   |
 | $n/2 + 1$              | $\frac{\text{sr}}{2} + 1$ |
+
+TODO:
+- given the proof we can show what is the magnitude and what is the phase
+- why do the DFT coefficients look like what they look like

@@ -8,7 +8,7 @@ Diffusion Probabilistic Model (*DPM*) is a probabilistic generative model. The
 model was introduced by [Sohl-Dikstein et al.
 (2015)](https://proceedings.mlr.press/v37/sohl-dickstein15.pdf) but the model
 was improved multiple times
-([DDPM](./denoising_diffusion_probabilistic_model.md), TOOD: more).
+([DDPM](./denoising_diffusion_probabilistic_model.md), TODO: more).
 
 ## Overview of how DPM work
 
@@ -35,6 +35,7 @@ gives us the *true* value, which we can contrast with the generated to train a
 DPM.
 
 #### Entropy of reverse process
+TODO: why is this math here if it is a intro note?
 
 Since the forward process is known, we can define lower and upper bounds on the
 [conditional cross-entropy](./conditional_entropy.md) of a step in the reverse

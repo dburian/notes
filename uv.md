@@ -92,6 +92,28 @@ in case you want to create it you can use: `uv lock`.
 To make sure your environment (saved on the disk at `.venv` at root of the
 project) is equal to what is described in `uv.lock`, you run `uv sync`.
 
+### No build isolation
+
+Some packages require building **with the installed packages** as opposed to the
+standard isolated building in an **isolated environment**. `uv` has the option
+to:
+- build them together w/ the installed packages
+- build them in an isolated environment, where `uv` ensures the isolated
+  environment matches the used packages
+
+The latter option is preferred and is configured as follows:
+```toml
+# Build flash-attn in a independent environment, but with the same pytorch as
+# will be installed.
+[tool.uv.extra-build-dependencies]
+flash-attn = [
+  { requirement = "torch", match-runtime = true }
+]
+```
+
+**Super helpful `uv` doc**
+[here](https://docs.astral.sh/uv/concepts/projects/config/#build-isolation).
+
 ## Python version
 
 uv respects `.python-version` file. It's something like `uv.lock` for your
@@ -108,3 +130,26 @@ uv run python path/to/script.py
 
 which has the added benefit that it syncs the environment before executing
 anything.
+
+## Building and publishing a package
+
+Bulding a package and publishing is easy as:
+
+```bash
+# Build the package into dist/*
+uv build
+
+# Pulish the built package to given PyPi index
+uv publish --token "$PIPY_INDEX_TOKEN" --publish_url "$PIPY_INDEX_URL" dist/*
+```
+
+## `uv` gotchas
+
+Since `uv` doesn't recommend using the `.venv`, all our binaries are now
+'hidden' from our PATH inside `uv run ...`. Either we ignore the recommendation
+from the `uv` authors or we have to:
+
+- adjust the path to the language server from `<ls_binary>` to `uv run
+  <ls_binary>`
+- [`pre-commit`](./pre_commit.md) is clever enough to use the correct binary
+  after running `uv run pre-commit install`

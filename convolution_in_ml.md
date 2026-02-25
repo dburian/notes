@@ -21,27 +21,24 @@ stuck so ...
 
 ## Variants
 
-### Depth-wise separable convolution
+### Point-wise convolution
 
-Depth-wise separable convolution is a variant of convolution that saves on
-parameter count. The variant was introduced as part of the [Mobilenet
-model][mobilenet]. Basically input and output channels are not mixed and number
-of input channels is equal to number of output channels:
-
-$$
-\left(K \star_{DW} I\right)_{i, j, c} =
-\sum_{m, n} I_{i\cdot S + m, j \cdot S + n, c} K_{m, n, c}
-$$
+Point-wise convolution is when the kernel is of size $1\times 1$. It is used to
+mix only the input channels.
 
 ### Grouped convolution
 
-Another way how to save on parameter count is to not let each output channel to
-depend on each input channel. Instead we split channels to equally sized
-**groups** and allow the convolution to compute an output for an output channel
-only from input channels in the same group. This is called a **grouped**
-convolution and can be achieved by passing parameter `groups` to a convolution
-layer. Note that the \# of input channels and \# of output channels must both be
-divisible by \# of groups.
+[ResNeXts](./resnext.md) came up with the idea to split channels into equally
+sized groups, which do not pass information, thereby saving up on parameter
+count. Grouped convolution is created when you pass parameter `groups` to a
+convolution layer. Note that the \# of input channels and \# of output channels
+must both be divisible by \# of groups.
+
+
+### Depth-wise convolution
+
+[Depth-wise convolution](./mobilenet.md) takes a step further, by setting \# of
+groups to \# of input channels.
 
 
 ## Blocks
@@ -63,12 +60,13 @@ The best is "*Full pre-activation*" block that
 - has batch-norm before activations so that the results are actually non-linear
   -- activations are only non-linear near zero
 
-### Separable blocks
+### Depth-wise separable blocks
 
-[Mobilenet][mobilenet] introduced Depth-wise separable convolutions. However,
-its lack of ability to mix channels between each other was so limiting, that it
-was always used in "*Separable block*":
+[Depth-wise separable convolutions](./mobilenet.md) is the concatenation of
 
-- Depth-wise convolution operating on channels separately
-- 1x1 Regular convolution operating equally for all positions, but mixing input
-  and output channels
+- depth-wise convolution
+- point-wise convolution (convolution with 1x1 kernel)
+
+---
+Sources:
+- Nice animations: [animatedai.github.io](animatedai.github.io)

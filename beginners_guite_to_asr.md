@@ -7,6 +7,10 @@ tags: [ml,speech_to_text]
 I write this, since I'm a beginner in speech ML (TTS, ASR/STT). This is what has
 helped me get started.
 
+## Datasets
+
+See [Speech datasets](./speech_datasets.md).
+
 ## Some nice-looking models (as of Q1 2025)
 
 ### Overview

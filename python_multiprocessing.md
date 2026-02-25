@@ -22,6 +22,13 @@ with get_context('spawn').Pool as p:
   p.imap(...)
 ```
 
+### How memory works when forking
+
+When `os.fork()` is called, the child process gets the same memory as the parent
+one. However, on the first write of either of the processes, the memory is
+copied (this is called `copy-on-write`). This ensures independent memory states,
+while maintaining minimal effort.
+
 ## When spawning the worker function should be from another module
 
 With the `spawn` method, a new python interpreter is created. This means it has

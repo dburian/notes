@@ -23,6 +23,7 @@ TODO:
 - Contrastive loss
 - diversity loss for the masked prediction
 - usage of SpecAugment during fine-tuning
+- [SpecAugment](./spec_augment.md)
 
 ## TMP notes
 

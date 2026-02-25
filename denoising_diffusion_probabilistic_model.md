@@ -14,9 +14,7 @@ images - basically fine-tuning the method.
 
 ## Training
 
-In this section I go over the DDPM's training. First, let me go over the main
-ideas quickly, then I'll drill into the math and details in the following
-subsections.
+First at high-level, then the following subsection explains the details.
 
 ### Forward and Reverse processes
 

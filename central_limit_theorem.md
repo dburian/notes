@@ -5,8 +5,8 @@ tags: [statistics]
 # Central limit theorem
 
 In essence, Central Limit Theorem says that the [sampling
-distribution](./sampling_distribution.md) of **sample mean** converges to normal
-distribution as the sample size grows.
+distribution](./sampling_distribution.md) of **sample mean** converges to [normal
+distribution](./normal_distribution.md) as the sample size grows.
 
 In pratice, when sample size reaches 30, we assume the sample mean will be
 normally distributed.

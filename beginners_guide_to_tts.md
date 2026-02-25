@@ -26,6 +26,10 @@ an input text. Usually this model is actually whole system of models containing:
 
 - vocoder -- converts mel-spectrogram to waveforms
 
+## Datasets
+
+See [Speech datasets](./speech_datasets.md).
+
 ## Types of mel-spectrogram generators
 
 There are several types of models for mel-spectrogram generation.
