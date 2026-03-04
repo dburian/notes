@@ -75,17 +75,21 @@ This is a summary of large datasets for speech:
 
 1. \[quality TTS\] HifiTTS -- high bandwidth dataset, 10 speakers, 292 hours
 
-1. \[quality TTS\] HifiTTS2 -- continuation of HifiTTS, enlarged to 5k speakers
-   and 36k hours
+1. \[quality TTS\] [HifiTTS2](./hifitts2.md) -- continuation of HifiTTS,
+   enlarged to 5k speakers and 36k hours
 
 1. \[global TTS/ASR\] Massively Multilingual Speech -- 1000k languages focused
    on low-resource languages, few speakers, formal speech
+
+1. \[ASR\] MLS -- large scale multilingual dataset for speech research (derived
+   from LibriVox)
 
 
 ## Filtered
 
 Datasets that have been filtered:
-- HifiTTS2 -- signal to noise ratio (SNR), WER 0%
+- [HifiTTS2](./hifitts2.md) -- CER/WER, bandwidth estimation, silence trimming,
+  segmentation
 - LibriTTS / LibriTTS-R -- (SNR), filter out segments with a lot of
   reverbaration
 - GigaSpeech -- multi-filtering (?), ASR confidence scores, character to
