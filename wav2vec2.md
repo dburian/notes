@@ -1,10 +1,14 @@
 ---
 tags: [ml,speech_to_text]
 ---
-# Wav2vec
+# Wav2vec2
 
-Wav2vec is a pre-trained speech recognition model introduced by [Baevski et al.
-(2020)](https://arxiv.org/pdf/2006.11477).
+Wav2vec is a pre-trained speech character-level recognition model introduced by
+[Baevski et al. (2020)](https://arxiv.org/pdf/2006.11477).
+
+Since Wav2
+
+## Architecture
 
 Wav2vec is composed of several parts. CNN acts as a feature encoder and encodes
 the audio signal to fixed-sized representations which are fed to Transformer

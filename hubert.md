@@ -5,7 +5,7 @@ tags: [ml,speech_to_text]
 
 Hidden-unit BERT (HuBERT) is a pre-trained speech recognition model introduced
 by [Hsu et al. (2021)](https://arxiv.org/pdf/2106.07447). HuBERT closely
-resembles [wav2vec](./wav2vec.md) in that it pre-trains using self-supervised
+resembles [wav2vec2](./wav2vec2.md) in that it pre-trains using self-supervised
 learning by classifying quantized input features.
 
 ## Architecture

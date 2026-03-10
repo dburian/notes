@@ -6,7 +6,7 @@ tags: [ml,speech_to_text]
 
 Whisper is a pre-trained speech to text model introduced by [Radford et al.,
 2020](https://arxiv.org/pdf/2212.04356). Compared to other STT models like
-[HuBERT](./hubert.md) or [wav2vec](./wav2vec.md), Whisper aims to be ready out
+[HuBERT](./hubert.md) or [wav2vec2](./wav2vec2.md), Whisper aims to be ready out
 of the box for zero-shot transcription.
 
 Instead of training an encoder, authors chose to train speech transcriber

@@ -9,7 +9,7 @@ It generally works very well, though you cannot expect miracles. **Its strength
 lies in the ease of use and clever combination of several models**:
 - Voice Activity Detection (VAD) -- cuts recording into short segments
 - [Whisper](./whisper.md) -- generates ASR transcript for each segment
-- [Wav2vec2](./wav2vec.md) -- aligns the transcript with the recording
+- [Wav2vec2](./wav2vec2.md) -- aligns the transcript with the recording
 - Diarization model -- recognizes speaker changes between segments
 
 

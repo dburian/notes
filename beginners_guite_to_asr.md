@@ -53,7 +53,7 @@ See [Speech datasets](./speech_datasets.md).
     - [Something called TDT](https://arxiv.org/abs/2304.06795)
   - 💰comercial license
 - [FireRedASR (2025)](https://github.com/FireRedTeam/FireRedASR)
-- [Wav2vec (2020)](https://huggingface.co/docs/transformers/model_doc/wav2vec2)
+- [Wav2vec2 (2020)](./wav2vec2.md)
   - worse than Whisper on some random benchmark I found online, considerably so
     its probably true
 - [Phi-4 multimodal (2025)](https://arxiv.org/pdf/2503.01743)
@@ -201,7 +201,7 @@ Traditionally signal was visualized using [Mel-Frequency Cepstral Coefficients
 (MFCCs)](./cepstogram.md), which filters out sound's details and leaves only the
 main identification points. However, its a heavy feature processing which leaves
 out detail, that more powerful architectures could use. And so, recently, there
-are models that use pure sound wave such as [Wav2vec](./wav2vec.md) or
+are models that use pure sound wave such as [Wav2vec2](./wav2vec2.md) or
 [HuBERT](./hubert.md).
 
 ## Good sources of info
