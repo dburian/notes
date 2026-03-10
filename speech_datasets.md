@@ -35,8 +35,9 @@ This is a summary of large datasets for speech:
 
 1. \[phonetic ASR/TTS\] TIMIT -- small time-aligned phonetic dataset
 
-1. \[TTS\] LibriTTS / LibriTTS-R -- multi-speaker, english, from LibriSpeech
-   filtered with AI to clean up the audio
+1. \[TTS\] [LibriTTS](./libritts.md) / [LibriTTS-R](./libritts_r.md) --
+   multi-speaker, english, from LibriSpeech filtered with AI to clean up the
+   audio
 
 1. \[foundation TTS/ASR\] VoxPopuli -- 400k unlabeled hours, 1.8k labeled,
    multi-lingual, european parliament
@@ -90,7 +91,7 @@ This is a summary of large datasets for speech:
 Datasets that have been filtered:
 - [HifiTTS2](./hifitts2.md) -- CER/WER, bandwidth estimation, silence trimming,
   segmentation
-- LibriTTS / LibriTTS-R -- (SNR), filter out segments with a lot of
+- [LibriTTS](./libritts.md) -- SNR, filter out segments with a lot of
   reverbaration
 - GigaSpeech -- multi-filtering (?), ASR confidence scores, character to
   duration ratios, forced alignment learned from other datasets, iterative
