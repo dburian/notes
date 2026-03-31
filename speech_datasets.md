@@ -39,8 +39,8 @@ This is a summary of large datasets for speech:
    multi-speaker, english, from LibriSpeech filtered with AI to clean up the
    audio
 
-1. \[foundation TTS/ASR\] VoxPopuli -- 400k unlabeled hours, 1.8k labeled,
-   multi-lingual, european parliament
+1. \[foundation TTS/ASR\] [VoxPopuli](./voxpopuli.md) -- 400k unlabeled hours,
+   1.8k labeled, multi-lingual, european parliament
 
 1. \[test TTS\] FLEURS (Few-shot Learning Evaluation of Universal
    Representations) -- small testing multilingual dataset with the same set of
@@ -100,7 +100,7 @@ Datasets that have been filtered:
 - VoxCeleb -- alignment w/ video, video-oriented tools like face detection and
   lip sync
 - People's Speech -- ASR alignment by threshold
-- VoxPopuli -- AI background noise detection, ASR confidence, VAD
+- [VoxPopuli](./voxpopuli.md) -- ASR CER threshold
 - [Granary](./granary.md) -- Whisper hallucination detection, WER, language id filtering
 
 
